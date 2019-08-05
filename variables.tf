@@ -5,33 +5,33 @@ variable "enabled" {
 
 variable "namespace" {
   description = "Namespace (e.g. `eg` or `cp`)"
-  type        = "string"
+  type        = string
 }
 
 variable "stage" {
   description = "Stage (e.g. `prod`, `dev`, `staging`)"
-  type        = "string"
+  type        = string
 }
 
 variable "name" {
   description = "Name  (e.g. `app` or `cluster`)"
-  type        = "string"
+  type        = string
 }
 
 variable "delimiter" {
-  type        = "string"
+  type        = string
   default     = "-"
   description = "Delimiter to be used between `namespace`, `stage`, `name`, and `attributes`"
 }
 
 variable "attributes" {
-  type        = "list"
+  type        = list(string)
   default     = []
   description = "Additional attributes (e.g. `a` or `b`)"
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   default     = {}
   description = "Additional tags (e.g. `{\"BusinessUnit\" = \"XYZ\"`)"
 }
@@ -45,3 +45,4 @@ variable "await_peering" {
   default     = 0
   description = "Seconds to wait before attaching options to peering"
 }
+

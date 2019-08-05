@@ -107,6 +107,7 @@ resource "aws_vpc_peering_connection" "requester" {
 }
 
 resource "aws_vpc_peering_connection_options" "requester" {
+  count      = local.count
   provider   = aws.requester
   depends_on = [null_resource.await_active_peering]
 
